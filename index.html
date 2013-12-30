@@ -7,9 +7,22 @@
     <script src="jquery.music.snitcher.js"></script>
     <script type="text/javascript">
       $(function() {
-        $(".snitch").snitch({ username: "username", api_key: "api_key" });
+        $(".snitch").snitch({ username: "username", api_key: "api_key", });
       })
     </script>
+
+    <style type="text/css">
+      @import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+      body{ font-size:16px; color:#333; font-family:"Droid Sans","helvetica-neue","Helvetica", Arial, sans-serif; line-height:normal; }
+
+      .snitch { display:inline-block; font-size:11px; background: #fff; }
+      .snitch.active .track{color:#999;padding:4px 7px;line-height:15px;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;border:1px solid #f1f1f1;display:none;}
+      .snitch a{display:block;font-weight:normal;color:#999;text-decoration:none;}
+      .snitch img{float:left;margin:1px 5px 0 0;}
+      .snitch strong{font-weight:bold;color:#999;}
+
+
+    </style>
   </head>
   <body>
     <div class="snitch"></div>
