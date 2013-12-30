@@ -11,10 +11,10 @@ Informs the world about the music you're currently listenting to.
 5. Launch the plugin:
 
 ```javascript
-    <script type="text/javascript">
-      $(function() {
-        $(".snitch").snitch({ username: "YOUR_LASTFM_USERNAME", api_key: "YOUR_LASTFM_API_KEY" });
-      })
-    </script>
+<script type="text/javascript">
+  $(function() {
+    $(".snitch").snitch({ username: "YOUR_LASTFM_USERNAME", api_key: "YOUR_LASTFM_API_KEY" });
+  });
+</script>
 ```
 
