@@ -18,3 +18,6 @@ Informs the world about the music you're currently listenting to.
 </script>
 ```
 
+----
+
+The jQuery plugin was created using the [jQuery Plugin Template](http://kolodny.github.io/blog/blog/2013/12/27/my-favorite-jquery-plugin-template/) by Moshe Kolodny.
