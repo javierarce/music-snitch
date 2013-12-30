@@ -17,6 +17,7 @@ Informs the world about the music you're currently listenting to.
   });
 </script>
 ```
+
 6. Enable the 'Scrobble to Last.fm' option from your favorite music player (see instructions below).
 7. Play a nice song and refresh the page.
 
