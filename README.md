@@ -18,8 +18,13 @@ Informs the world about the music you're currently listenting to.
   });
 </script>
 ```
-6. If you're using Spotify, activate the 'Scrobble to Last.fm' option from your user profile.
+6. Enable the 'Scrobble to Last.fm' option from your favorite music player (see instructions below).
 7. Play a nice song and refresh the page.
+
+#### Scrobbling
+
+* [From Spotify](https://support.spotify.com/us/learn-more/faq/#!/article/Scrobble-to-Last-fm).  
+* [From Rdio](http://help.rdio.com/customer/portal/articles/58992-external-settings).  
 
 ----
 
