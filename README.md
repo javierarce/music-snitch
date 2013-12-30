@@ -3,6 +3,7 @@ music-snitcher
 
 Informs the world about the music you're currently listenting to.
 
+### Installation
 
 1. Get a [Last.fm API account](http://www.last.fm/api/account/create).
 2. Grab the public API Key.
@@ -17,6 +18,8 @@ Informs the world about the music you're currently listenting to.
   });
 </script>
 ```
+6. If you're using Spotify, activate the 'Scrobble to Last.fm' option from your user profile.
+7. Play a nice song and refresh the page.
 
 ----
 
