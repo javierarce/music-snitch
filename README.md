@@ -10,7 +10,7 @@ Informs the world about the music you're currently listenting to.
 4. Add an element in your HTML where you want the snitcher to appear (eg: ```<div class="snitch"></div>```).
 5. Launch the plugin:
 
-```javascript
+```js
 <script type="text/javascript">
   $(function() {
     $(".snitch").snitch({ username: "YOUR_LASTFM_USERNAME", api_key: "YOUR_LASTFM_API_KEY" });
