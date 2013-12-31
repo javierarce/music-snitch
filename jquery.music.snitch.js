@@ -23,7 +23,7 @@
 
           var separator = (track.name.length + track.artist["#text"].length > 25) ? ' by ': ' by ';
 
-          $elem.find(".track").html('<img src="eq.gif" width="12px" height="12px" />' + track.name + separator + '<strong>' + track.artist["#text"] + '</strong>');
+          $elem.find(".track").html(track.name + separator + '<strong>' + track.artist["#text"] + '</strong>');
           $elem.addClass("active");
           $elem.find(".track").delay(250).fadeIn(250);
 
