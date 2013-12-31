@@ -1,5 +1,5 @@
 ;(function($) {
-  // multiple plugins can go here
+
   (function(pluginName) {
     var defaults = {
 
@@ -15,32 +15,37 @@
 
       showCurrentTrack: function(data, $elem) {
 
+        if (data.error) {
+          console.error(data.message);
+          return;
+        }
+
         var tracks = data.recenttracks.track;
 
         track = tracks[0];
 
         if (track && "@attr" in track && track["@attr"].nowplaying == "true") {
 
-          var separator = (track.name.length + track.artist["#text"].length > 25) ? ' by ': ' by ';
-
-          $elem.find(".track").html(track.name + separator + '<strong>' + track.artist["#text"] + '</strong>');
+          $elem.find(".track").html(track.name + ' by ' + '<strong>' + track.artist["#text"] + '</strong>');
           $elem.addClass("active");
           $elem.find(".track").delay(250).fadeIn(250);
 
         }
       }
     };
+
     $.fn[pluginName] = function(options) {
+
       options = $.extend(true, {}, defaults, options);
 
       return this.each(function() {
         var elem = this,
         $elem = $(elem);
 
-        // heres the guts of the plugin
-        var url = "http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=" + options.username + "&api_key=" + options.api_key + "&limit=1&format=json&callback=lastTrackCallback";
+        var url  = 'http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=' + options.username + '&api_key=' + options.api_key + '&limit=1&format=json&callback=lastTrackCallback';
+        var html = '<a href="http://www.lastfm.es/user/' + options.username + '" title="Currently listening"><div class="track"></div></a>';
 
-        $elem.append('<a href="http://www.lastfm.es/user/' + options.username + '" title="Currently listening"><div class="track"></div></a>');
+        $elem.append(html);
 
         options.getCurrentTrack(url, $elem);
 
