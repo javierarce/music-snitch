@@ -9,7 +9,10 @@
     <script src="../jquery.music.snitch.js"></script>
     <script type="text/javascript">
       $(function() {
-        $(".snitch").snitch({ username: "username", api_key: "api_key", });
+        $(".snitch").snitch({ username: "username", api_key: "api_key", })
+        .on("listening", function(e, track) {
+          console.log(track.name, track.artist);
+        });
       })
     </script>
   </head>
