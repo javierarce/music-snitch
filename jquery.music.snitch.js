@@ -8,12 +8,19 @@
         var self = this;
 
         $.ajax({ url: url, data: null, success: function(data) {
-          self.showCurrentTrack(data, $elem);
+
+          var track = self.getTrackInfo(data);
+
+          if (track) {
+            self.showCurrentTrack(track, $elem);
+            $elem.trigger("listening", track);
+          }
+
         }, dataType: "jsonp" });
 
       },
 
-      showCurrentTrack: function(data, $elem) {
+      getTrackInfo: function(data) {
 
         if (data.error) {
           console.error(data.message);
@@ -25,12 +32,17 @@
         track = tracks[0];
 
         if (track && "@attr" in track && track["@attr"].nowplaying == "true") {
-
-          $elem.find(".track").html(track.name + ' by ' + '<strong>' + track.artist["#text"] + '</strong>');
-          $elem.addClass("active");
-          $elem.find(".track").delay(250).fadeIn(250);
-
+          return { name: track.name, artist: track.artist["#text"] };
         }
+
+      },
+
+      showCurrentTrack: function(track, $elem) {
+
+        $elem.find(".track").html(track.name + ' by ' + '<strong>' + track.artist + '</strong>');
+        $elem.addClass("active");
+        $elem.find(".track").delay(250).fadeIn(250);
+
       }
     };
 
