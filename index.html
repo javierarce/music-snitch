@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Music Snitch</title>
+  <script src="music.snitch.js"></script>
+  <style type="text/css" media="">
+    music-snitch {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      display: block;
+      opacity: 0;
+      visibility: hidden;
+      max-width: 300px;
+      border: 1px solid #000;
+      border-radius: 2px;
+      padding: 1em;
+      transition: opacity 150ms ease-in-out;
+    }
+    
+    music-snitch.is-visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    music-snitch::part(link) {
+      display: block;
+    }
+
+    music-snitch::part(title) {
+      display: block;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <music-snitch data-username="username" data-key="api-key"></music-snitch>
+</body>
+</html>
