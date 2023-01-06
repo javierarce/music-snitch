@@ -12,12 +12,20 @@ class MusicSnitch extends HTMLElement {
       const track = data.recenttracks.track[0]
 
       if (track) {
-        this.render(track.name, track.artist, track.url)
+        const isPlaying = track['@attr'] && track['@attr'].nowplaying ? true : false
+        this.render(track.name, track.artist, track.url, isPlaying)
       }
     })
   }
 
-  render (name, artist, URL) {
+  render (name, artist, URL, isPlaying) {
+    if (!isPlaying) {
+      if (this.shadow) {
+        this.classList.remove('is-visible')
+      }
+      return
+    }
+
     const text = document.createElement('a')
     text.href = URL
     text.textContent = `${name} by ${artist['#text']}`
